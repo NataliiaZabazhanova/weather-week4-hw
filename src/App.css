@@ -1,0 +1,9 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  /*background: url("../img/background.jpg") 0 0 / 100% no-repeat;*/
+  background: linear-gradient(65.5deg, rgb(23, 205, 205) -15.1%, rgb(23, 25, 95) 71.5%);
+}
+.container {
+  padding: 70px;
+}
