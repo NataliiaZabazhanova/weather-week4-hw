@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import Forecast from './Forecast';
 import "./CurrentWeather.css";
 
 export default function CurrentWeather(props) {
     return (
+        <>
         <div className="Currentweather">
             <div className="CurrentWeathe__main">
                 <h2 className="CurrentWeather__city">{props.city}</h2>
@@ -18,5 +20,7 @@ export default function CurrentWeather(props) {
                 <li><span>Description:</span> {props.description}</li>
             </ul>
     </div>
+     <Forecast />
+    </>
     )
 }
