@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
+import CurrentWeather from "./CurrentWeather";
 
 export default function Weather() {
 const [city, setCity] = useState(null);
 const [weather, setWeather] = useState({});
 function displayWeather(response) {
     setWeather({
-        temperature: response.data.main.temp,
-        humidity: response.data.main.humidity,
-        wind: response.data.wind.speed,
+        temperature: Math.round(response.data.main.temp),
+        humidity: Math.round(response.data.main.humidity),
+        wind: Math.round(response.data.wind.speed),
         description: response.data.weather[0].description,
         icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     });
@@ -32,11 +33,11 @@ function displayWeather(response) {
             <button className="search__btn" type="submit">Search</button>
             <button className="search__btn">Current location</button>
         </form>
-        <p>Temperature in {city} is {weather.temperature}</p>
-        <p>Humiditi in {city} is {weather.humidity}</p>
-        <p>Wind in {city} is {weather.wind}</p>
-        <p>Weather in {city} is {weather.description}</p>
+
+    
         <img src={weather.icon} alt="weather"/>
+
+        <CurrentWeather city={city} temperature={weather.temperature} humidity={weather.humidity} wind={weather.wind} description={weather.description}/>
     </div>
     );
 
