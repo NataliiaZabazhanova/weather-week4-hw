@@ -7,6 +7,7 @@ export default function Weather() {
 const [city, setCity] = useState(null);
 const [weather, setWeather] = useState({});
 const [loaded, setLoaded] = useState(false);
+const [result, setResult] = useState("");
 function displayWeather(response) {
     setLoaded(true);
     setWeather({
@@ -24,6 +25,7 @@ function displayWeather(response) {
         let unit = "metric";
         let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
         axios.get(apiUrl).then(displayWeather);
+        setResult(city);
     }
     function updCity(event) {
         setCity(event.target.value);
@@ -38,7 +40,7 @@ function displayWeather(response) {
         return (
             <div className="Weather">
                 {form}
-                <CurrentWeather city={city} temperature={weather.temperature} humidity={weather.humidity} wind={weather.wind} description={weather.description} icon={weather.icon} />
+                <CurrentWeather city={result} temperature={weather.temperature} humidity={weather.humidity} wind={weather.wind} description={weather.description} icon={weather.icon} />
             </div>
             );
     } else {
