@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.Currentweather {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 90px 0px;
+    color: #EEEEEE;
+}
+.CurrentWeather__current {
+    flex: 0 1 33.33333%;
+    display: flex;
+    flex-direction: column;
+}
+.CurrentWeather__temp {
+}
+.CurrentWeather__temp span {
+    font-weight: 300;
+}
+.CurrentWeather__temp a {
+    font-size: 25px;
+    font-weight: 300;
+    vertical-align: top;
+    text-decoration: none;
+    color: #EEEEEE;
+}
+.CurrentWeather__temp a:hover {
+    cursor: pointer;
+}
+h2 {
+    font-size: 40px;
+    font-weight: 300;
+}
+.temp__c {}
+.temp__f {}
+.CurrentWeater__img {
+    max-width: 130px;
+}
+.CurrentWeather__info {
+    flex: 0 1 33.33333%;
+    list-style: none;
+    font-size: 22px;
+    font-weight: 300;
+}
+.CurrentWeather__info li span {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+.CurrentWeather__info li:nth-child(2) {
+    margin: 20px 0px;
+}
+.CurrentWeathe__main {
+    flex: 0 1 33.33333%;
+    display: flex;
+    flex-direction: column;
+}
+.CurrentWeather__city {
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+.CurrentWeather__date {
+    margin: 20px 0px;
+}

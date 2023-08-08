@@ -6,7 +6,9 @@ import CurrentWeather from "./CurrentWeather";
 export default function Weather() {
 const [city, setCity] = useState(null);
 const [weather, setWeather] = useState({});
+const [loaded, setLoaded] = useState(false);
 function displayWeather(response) {
+    setLoaded(true);
     setWeather({
         temperature: Math.round(response.data.main.temp),
         humidity: Math.round(response.data.main.humidity),
@@ -26,19 +28,20 @@ function displayWeather(response) {
     function updCity(event) {
         setCity(event.target.value);
     }
-    return (
-    <div className="Weather">
-        <form className="search" onSubmit={handleSubmit}>
-            <input className="search__field" type="search" placeholder=" Type a city..." onChange={updCity}/>
-            <button className="search__btn" type="submit">Search</button>
-            <button className="search__btn">Current location</button>
-        </form>
+    let form = (<form className="search" onSubmit={handleSubmit}>
+                    <input className="search__field" type="search" placeholder=" Type a city..." onChange={updCity}/>
+                    <button className="search__btn" type="submit">Search</button>
+                    <button className="search__btn">Current location</button>
+                </form>);
 
-    
-        <img src={weather.icon} alt="weather"/>
-
-        <CurrentWeather city={city} temperature={weather.temperature} humidity={weather.humidity} wind={weather.wind} description={weather.description}/>
-    </div>
-    );
-
+    if(loaded) {
+        return (
+            <div className="Weather">
+                {form}
+                <CurrentWeather city={city} temperature={weather.temperature} humidity={weather.humidity} wind={weather.wind} description={weather.description} icon={weather.icon} />
+            </div>
+            );
+    } else {
+        return form;
+    }
 }
