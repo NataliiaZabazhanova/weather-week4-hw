@@ -7,4 +7,14 @@
 }
 .container {
   padding: 70px;
+
+}
+.App__body {
+  
+}
+.App__footer {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
 }

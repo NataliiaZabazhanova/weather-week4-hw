@@ -1,0 +1,12 @@
+.Footer {
+    color: #10EAF0;
+    opacity: 0.7;
+}
+.Footer a {
+    color: #10EAF0;
+    opacity: 0.7;
+    text-decoration: none;
+}
+.Footer a:hover {
+    cursor: pointer;
+}
