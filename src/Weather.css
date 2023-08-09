@@ -67,12 +67,15 @@
     }
     .search__field {
         width: 100%;
+        min-height: 50px;
     }
     .btn__row {
         margin: 30px 0px 0px 0px;
         display: flex;
         align-items: center;
-        justify-content: left;
+    }
+    .search__btn {
+        min-height: 50px;
     }
     .search__btn_m {
         margin: 0px 10px 0px 0px;
