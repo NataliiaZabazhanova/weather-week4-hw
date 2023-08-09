@@ -10,6 +10,7 @@ export default function CurrentWeather(props) {
                 <h2 className="CurrentWeather__city">{props.city}</h2>
                 <p className="CurrentWeather__date">Wednesday, 12:45</p>
             </div>
+            <div className="CurrentWeather__weather">
             <div className="CurrentWeather__current">
                 <h2 className="CurrentWeather__temp">{props.temperature} <a href="https://codesandbox.io/" className="temp__c">°C</a> <span>|</span> <a href="https://codesandbox.io/" className="temp__f">°F</a> </h2>
                 <img src={props.icon} alt="weather" className="CurrentWeater__img"/>
@@ -19,6 +20,7 @@ export default function CurrentWeather(props) {
                 <li><span>Wind:</span> {props.wind} km/h</li>
                 <li><span>Description:</span> {props.description}</li>
             </ul>
+            </div>
     </div>
      <Forecast />
     </>
