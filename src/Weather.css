@@ -65,10 +65,14 @@
     .search {
         flex-direction: column;
     }
+    .search__field {
+        width: 100%;
+    }
     .btn__row {
         margin: 30px 0px 0px 0px;
         display: flex;
         align-items: center;
+        justify-content: left;
     }
     .search__btn_m {
         margin: 0px 10px 0px 0px;
