@@ -32,8 +32,8 @@ function displayWeather(response) {
     }
     let form = (<form className="search" onSubmit={handleSubmit}>
                     <input className="search__field" type="search" placeholder=" Type a city..." onChange={updCity}/>
-                    <button className="search__btn" type="submit">Search</button>
-                    <button className="search__btn">Current location</button>
+                    <button className="search__btn search__btn_m" type="submit">Search</button>
+                    <button className="search__btn search__btn_l">Current location</button>
                 </form>);
 
     if(loaded) {
