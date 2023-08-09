@@ -15,6 +15,7 @@
     flex-direction: column;
 }
 .CurrentWeather__temp {
+    text-align: center;
 }
 .CurrentWeather__temp span {
     font-weight: 300;
@@ -37,12 +38,15 @@ h2 {
 .temp__f {}
 .CurrentWeater__img {
     max-width: 130px;
+    display: block;
+    margin: 0 auto;
 }
 .CurrentWeather__info {
     flex: 0 1 33.33333%;
     list-style: none;
     font-size: 22px;
     font-weight: 300;
+    line-height: 34px;
 }
 .CurrentWeather__info li span {
     text-transform: uppercase;
@@ -62,4 +66,22 @@ h2 {
 }
 .CurrentWeather__date {
     margin: 10px 0px;
+}
+@media (max-width: 950px) {
+    .CurrentWeather__city {
+        letter-spacing: 5px;
+    }
+}
+@media (max-width: 850px) {
+    h2 {
+        font-size: 35px;
+    }
+    .CurrentWeather__info {
+        font-size: 20px;
+    }
+}
+@media (max-width: 768px) {
+    .Currentweather {
+        flex-wrap: wrap;
+    }
 }
