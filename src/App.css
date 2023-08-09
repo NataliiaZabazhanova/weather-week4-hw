@@ -15,7 +15,7 @@
 }
 @media (max-width: 600px) {
   .container {
-    padding: 50px 40px;
+    padding: 50px 20px;
   }
 }
 .App__body {
