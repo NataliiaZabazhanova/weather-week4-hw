@@ -14,6 +14,7 @@ function displayWeather(response) {
         temperature: Math.round(response.data.main.temp),
         humidity: Math.round(response.data.main.humidity),
         wind: Math.round(response.data.wind.speed),
+        date: new Date(response.data.dt * 1000),
         description: response.data.weather[0].description,
         icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     });
@@ -42,7 +43,7 @@ function displayWeather(response) {
         return (
             <div className="Weather">
                 {form}
-                <CurrentWeather city={result} temperature={weather.temperature} humidity={weather.humidity} wind={weather.wind} description={weather.description} icon={weather.icon} />
+                <CurrentWeather city={result} temperature={weather.temperature} humidity={weather.humidity} wind={weather.wind} date={weather.date} description={weather.description} icon={weather.icon} />
             </div>
             );
     } else {

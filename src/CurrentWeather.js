@@ -1,6 +1,7 @@
 import React from "react";
 import Forecast from './Forecast';
 import "./CurrentWeather.css";
+import CurrentDate from "./CurrentDate";
 
 export default function CurrentWeather(props) {
     return (
@@ -8,7 +9,7 @@ export default function CurrentWeather(props) {
         <div className="Currentweather">
             <div className="CurrentWeathe__main">
                 <h2 className="CurrentWeather__city">{props.city}</h2>
-                <p className="CurrentWeather__date">Wednesday, 12:45</p>
+                <p className="CurrentWeather__date"><CurrentDate date={props.date} /></p>
             </div>
             <div className="CurrentWeather__weather">
             <div className="CurrentWeather__current">
