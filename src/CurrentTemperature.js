@@ -24,7 +24,7 @@ export default function CurrentTemperature(props) {
         let fahrenheit = (props.temperature * 9/5) + 32;
         return (
             <div className="CurrentTemperature">
-                {fahrenheit}  
+                {Math.round(fahrenheit)}  
                 <a href="/" className="temp__c"  onClick={convertToCelsius}> °C</a> 
                 <span>|</span> 
                 <span className="temp__f">°F</span>
