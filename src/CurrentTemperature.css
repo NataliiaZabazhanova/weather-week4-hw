@@ -1,0 +1,7 @@
+.CurrentTemperature>span {
+    font-size: 25px;
+    font-weight: 300;
+    vertical-align: top;
+    text-decoration: none;
+    color: #EEEEEE;
+}

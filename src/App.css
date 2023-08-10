@@ -4,6 +4,7 @@
   /*background: url("../img/background.jpg") 0 0 / 100% no-repeat;/
   /*background: linear-gradient(109.6deg, rgb(41, 125, 182) 3.6%, rgb(77, 58, 151) 51%, rgb(103, 55, 115) 92.9%);*/
   background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);
+  
 }
 .container {
   max-width: 1600px;

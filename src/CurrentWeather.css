@@ -22,15 +22,8 @@
 .CurrentWeather__temp {
     text-align: center;
 }
-.CurrentWeather__temp span {
+.CurrentWeather__temp span{
     font-weight: 300;
-}
-.CurrentWeather__temp a {
-    font-size: 25px;
-    font-weight: 300;
-    vertical-align: top;
-    text-decoration: none;
-    color: #EEEEEE;
 }
 .CurrentWeather__temp a:hover {
     cursor: pointer;
@@ -39,8 +32,6 @@ h2 {
     font-size: 40px;
     font-weight: 300;
 }
-.temp__c {}
-.temp__f {}
 .CurrentWeater__img {
     max-width: 130px;
     display: block;
