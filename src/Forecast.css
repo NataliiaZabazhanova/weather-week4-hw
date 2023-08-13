@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: #EEEEEE;
+}
+.Forecast {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.Forecast__row {
+    display: flex;
+    flex-direction: column;
+}
+.Forecast__temp {
+    text-align: center;
+    font-size: 25px;
+    
+}
+.Forecast__temp_max {
+    margin: 0px 15px 0px 0px;
+}
+.Forecast__temp_min {
+    opacity: 0.7;
+}
+.Forecast__day {
+    text-align: center;
+    font-size: 20px;
+    color: #10EAF0;
+    margin: 20px 0px;
+    border: 1px solid #10EAF0;
+    border-radius: 10px;
+}
+.Forecast__img {
+    display: block;
+    margin: 0 auto;
+}

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 import CurrentWeather from "./CurrentWeather";
+import Forecast from './Forecast';
 
 export default function Weather() {
 const [city, setCity] = useState(null);
@@ -10,10 +11,14 @@ const [loaded, setLoaded] = useState(false);
 const [result, setResult] = useState("");
 function displayWeather(response) {
     setLoaded(true);
+    console.log(response.data);
     setWeather({
+        //for forecast
+        coord: response.data.coord,
         temperature: Math.round(response.data.main.temp),
         humidity: Math.round(response.data.main.humidity),
         wind: Math.round(response.data.wind.speed),
+        //for showing current data
         date: new Date(response.data.dt * 1000),
         description: response.data.weather[0].description,
         icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -44,6 +49,7 @@ function displayWeather(response) {
             <div className="Weather">
                 {form}
                 <CurrentWeather city={result} temperature={weather.temperature} humidity={weather.humidity} wind={weather.wind} date={weather.date} description={weather.description} icon={weather.icon} />
+                <Forecast coord={weather.coord} />
             </div>
             );
     } else {
