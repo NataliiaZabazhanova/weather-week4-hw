@@ -1,37 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Forecast.css";
 import axios from "axios";
+import ForecastDay from "./ForecastDay";
 
 export default function Forecast(props) {
-    const [loaded, setLoaded] = useState(false);
-    const [forecast, setForecast] = useState(null);
-    //console.log(props.coord);
-    function displayForecast(response) {
-        console.log(response.data);
-        setForecast(response.data.daily);
-        setLoaded(true);
-    }
+  const [loaded, setLoaded] = useState(false);
+  const [forecast, setForecast] = useState([]);
 
+  useEffect(() => {
+    let apiKey = "6e6ec494746b5229a9f2d526478c924c";
+    let longitude = props.coord.lon;
+    let latitude = props.coord.lat;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
 
-    if(loaded) {
-        console.log(forecast);
+    axios.get(apiUrl).then((response) => {
+      setForecast(response.data.daily);
+      setLoaded(true);
+    });
+  }, [props.coord]);
+
+  if (loaded) {
+    const icon = `https://openweathermap.org/img/wn/${forecast[0].weather[0].icon}.png`;
+
     return (
-        <div className="Forecast">
-            <div className="Forecast__row">
-                <p className="Forecast__temp"><span className="Forecast__temp_max">{forecast[0].temperature.maximum} °C</span><span className="Forecast__temp_min">{Math.round(forecast[0].temperature.minimum)} °C</span></p>
-                <p className="Forecast__day">Monday</p>
-                <img src="" className="Forecast__img" alt="weather"></img>
-            </div>
+      <div className="Forecast">
+        <div className="Forecast__row">
+          <ForecastDay data={forecast[0]} icon={icon} />
         </div>
-        );
-    } else { 
-        let apiKey = "bf636449b03206034d0ac2d97t9eo009";
-        let longitude = props.coord.lon;
-        let latitude = props.coord.lat;
-        let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${latitude}&lon=${longitude}&key=${apiKey}&units=metric`;
-        axios.get(apiUrl).then(displayForecast);
-
-        return null;
-}
-        
+      </div>
+    );
+  } else {
+    return null;
+  }
 }
