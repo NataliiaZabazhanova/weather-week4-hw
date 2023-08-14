@@ -24,9 +24,17 @@ export default function Forecast(props) {
 
     return (
       <div className="Forecast">
-        <div className="Forecast__row">
-          <ForecastDay data={forecast[0]} icon={icon} />
-        </div>
+        {forecast.map(function(dailyForecast, index) {
+            if(index < 5) {
+                return (
+                    <div key={index}>
+                        <ForecastDay data={dailyForecast} icon={icon} />
+                    </div>
+                    );
+            }            
+                    })}
+          
+      
       </div>
     );
   } else {

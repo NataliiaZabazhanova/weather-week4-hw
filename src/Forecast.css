@@ -4,9 +4,11 @@
     color: #EEEEEE;
 }
 .Forecast {
-display: flex;
-justify-content: space-between;
-align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 100px 0px 0px 0px;
+    padding: 20px;
 }
 .Forecast__row {
     display: flex;
@@ -14,8 +16,7 @@ align-items: center;
 }
 .Forecast__temp {
     text-align: center;
-    font-size: 25px;
-    
+    font-size: 25px; 
 }
 .Forecast__temp_max {
     margin: 0px 15px 0px 0px;
@@ -30,8 +31,57 @@ align-items: center;
     margin: 20px 0px;
     border: 1px solid #10EAF0;
     border-radius: 10px;
+    padding: 5px;
 }
 .Forecast__img {
     display: block;
     margin: 0 auto;
+    min-width: 70px;
+}
+@media (max-width: 1000px) {
+    .Forecast__temp {
+        font-size: 20px; 
+    }
+}
+@media (max-width: 800px) {
+    .Forecast {
+        margin: 80px 0px 0px 0px;
+    }
+    .Forecast__temp {
+        font-size: 16px; 
+    }
+    .Forecast__day {
+        font-size: 16px; 
+    }
+    .Forecast__temp_max {
+        margin: 0px 10px 0px 0px;
+    }
+
+}
+@media (max-width: 650px) {
+    .Forecast__day {
+       padding: 1px;
+    }
+    .Forecast__temp {
+        font-size: 12px; 
+    }
+    .Forecast__day {
+        font-size: 12px; 
+    }
+}
+@media (max-width: 600px) {
+    .Forecast {
+       flex-direction: column;
+       align-items: flex-start;
+       margin: 0;
+    }
+    .Forecast__temp {
+        font-size: 25px; 
+    }
+    .Forecast__day {
+        font-size: 20px; 
+    }
+    .Forecast__temp_max {
+        margin: 0px 15px 0px 0px;
+    }
 }
