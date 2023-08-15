@@ -20,15 +20,14 @@ export default function Forecast(props) {
   }, [props.coord]);
 
   if (loaded) {
-    const icon = `https://openweathermap.org/img/wn/${forecast[0].weather[0].icon}.png`;
-
+    
     return (
       <div className="Forecast">
-        {forecast.map(function(dailyForecast, index) {
+        {forecast.map(function(dailyForecast, index, icon) {
             if(index < 5) {
                 return (
                     <div key={index}>
-                        <ForecastDay data={dailyForecast} icon={icon} />
+                        <ForecastDay data={dailyForecast} icon={`https://openweathermap.org/img/wn/${dailyForecast.weather[0].icon}.png`} />
                     </div>
                     );
             }            

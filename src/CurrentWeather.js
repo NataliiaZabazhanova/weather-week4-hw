@@ -9,7 +9,7 @@ export default function CurrentWeather(props) {
         <div className="Currentweather">
             <div className="CurrentWeathe__main">
                 <h2 className="CurrentWeather__city">{props.city}</h2>
-                <p className="CurrentWeather__date"><CurrentDate date={props.date} /></p>
+                <div className="CurrentWeather__date"><CurrentDate date={props.date} /></div>
             </div>
             <div className="CurrentWeather__weather">
                 <div className="CurrentWeather__current">
