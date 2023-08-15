@@ -1,14 +1,16 @@
 .App {
-  width: 100vw;
-  height: 100vh;
-  /*background: url("../img/background.jpg") 0 0 / 100% no-repeat;/
+  max-width: 100%;
+   /*background: url("../img/background.jpg") 0 0 / 100% no-repeat;/
   /*background: linear-gradient(109.6deg, rgb(41, 125, 182) 3.6%, rgb(77, 58, 151) 51%, rgb(103, 55, 115) 92.9%);*/
   /*background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);*/
   
 }
 .container {
   max-width: 1600px;
-  padding: 70px;
+  padding: 70px 70px 20px 70px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 @media (max-width: 768px) {
   .container {
@@ -21,12 +23,9 @@
   }
 }
 .App__body {
-  
+  flex: 1 1 auto;
 }
 .App__footer {
-  position: fixed;
-  bottom: 1%;
-  left: 50%;
-  transform: translate(-50%, 0);
-  background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);
-}
+  margin: 40px 0px 10px 0px;
+  align-self: center;
+  }

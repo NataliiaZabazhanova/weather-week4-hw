@@ -1,7 +1,6 @@
 .Footer {
     color: #10EAF0;
-    opacity: 0.7;
-    
+    opacity: 0.7; 
 }
 .Footer a {
     color: #10EAF0;
@@ -10,4 +9,9 @@
 }
 .Footer a:hover {
     cursor: pointer;
+}
+@media (max-width: 420px) {
+    .Footer {
+        font-size: 12px;
+    }
 }
