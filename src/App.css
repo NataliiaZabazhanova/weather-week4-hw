@@ -12,6 +12,9 @@
   display: flex;
   flex-direction: column;
 }
+.wrapp {
+  
+}
 @media (max-width: 768px) {
   .container {
     padding: 50px;
@@ -23,6 +26,7 @@
   }
 }
 .App__body {
+  min-height: 80vh;
   flex: 1 1 auto;
 }
 .App__footer {
